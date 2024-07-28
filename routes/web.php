@@ -19,13 +19,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth', 'verified'])->group( function() {
 
-Route::get("/home", function() {
-    return view('home');
+    Route::get('/', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    Route::get("/home", function() {
+        return view('home');
+    })->name('dashboard');
+
 });
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
