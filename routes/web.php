@@ -21,6 +21,8 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group( function() {
 
+    Route::post("uploadFileClients", [BoletosController::class, 'index'])->name('upload');
+
     Route::get('/', function () {
         return view('dashboard');
     })->name('dashboard');
