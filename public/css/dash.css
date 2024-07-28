@@ -1,0 +1,39 @@
+#nomeFile
+{
+    text-decoration: none !important;
+    color: var(--var-qua) !important;
+}
+#formFileUpload
+{
+    display: none;
+}
+#btnProcessar
+{
+    background: var(--var-gre) !important;
+    color:aliceblue;
+    display: none;
+}
+#btnUpload
+{
+    background: var(--var-ter) !important;
+    color:aliceblue;
+}
+#containerRegistro
+{
+    overflow-x: scroll;
+    margin-top: 10px;
+}
+#tableUploaded thead
+{
+    background-color: var(--var-qua);
+    color:aliceblue;
+}
+#contianerBtnSendFile
+{
+    margin-top: 10px;
+}
+#contianerBtnSendFile button
+{
+    background-color: var(--var-gre);
+    color: aliceblue;
+}
