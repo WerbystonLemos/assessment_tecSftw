@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root
+{
+    --var-pri: #5CBBFA;
+    --var-sec: #6FA9CF;
+    --var-ter: #7491A5;
+    --var-qua: #6A747A;
+    --var-qui: #3D4850;
+    --var-sex: #1E2B33;
+}

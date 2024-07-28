@@ -1,0 +1,11 @@
+#containerNavigation
+{
+    background-color: var(--var-sex) !important;
+}
+#btnSair
+{
+    display: flex;
+    text-decoration: none !important;
+    font-size: 13pt;
+    color: #fff;
+}
