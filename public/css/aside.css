@@ -1,0 +1,35 @@
+aside#menuLateral
+{
+    background-color: var(--var-sex);
+    height: 93.6vh;
+    margin: -1px;
+}
+aside#menuLateral ul
+{
+    width: 100%;
+    padding: 10px;
+}
+aside#menuLateral ul li
+{
+    transition: all 0.2s;
+    background-color: var(--var-pri);
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+aside#menuLateral ul li:hover
+{
+    margin-left: 10px;
+    background-color: bisque;
+    transition: all 0.2s;
+}
+aside#menuLateral ul li a
+{
+    display: flex;
+    text-decoration: none;
+    color: var(--var-qui);
+}
+aside#menuLateral ul li a > *
+{
+    margin-right: 5px;
+}

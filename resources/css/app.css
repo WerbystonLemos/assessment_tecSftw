@@ -8,7 +8,10 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+.row
+{
+    margin: 0 !important;
+}
 :root
 {
     --var-pri: #5CBBFA;
