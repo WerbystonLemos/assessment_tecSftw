@@ -40,7 +40,7 @@
                                     <td class="text-center">{{ $row['codBarras'] }}</td>
                                     <td>{{ $row['valor'] }}</td>
                                     <td>{{ $row['vencimento'] }}</td>
-                                    <td>R${{ number_format((int) $row['juros'], 2) }}</td>
+                                    <td>R${{ number_format($row['juros'], 2) }}</td>
                                     <td title="{{ $row['status'][0] }}" style="cursor: pointer">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" style="color: {{ $row['status'][1] }}" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
                                             <circle cx="8" cy="8" r="8"/>

@@ -17,7 +17,7 @@ class BoletosController extends Controller
 
         if( $data >= $hoje )
         {
-            return '-';
+            return 0;
         }
         elseif( $data < $hoje )
         {
@@ -26,7 +26,7 @@ class BoletosController extends Controller
             $valor  = str_replace("R$", "", $vlr);
             $valor  = str_replace(",", ".", $valor);
 
-            return $valor * (str_replace("%", "", $tx)/100);
+            return ($valor/100) * $tx;
         }
     }
 
@@ -73,7 +73,7 @@ class BoletosController extends Controller
                 $arr['codBarras']   = str_replace([' ', '.'], '',$row[3]);
                 $arr['valor']       = str_replace(['R$'], '', $row[4]);
                 $arr['vencimento']  = $row[5];
-                $arr['juros']       = $this->verifyRate($row[6], $row[4], $row[5]);
+                $arr['juros']       = $this->verifyRate($row[6], (int)$row[4], $row[5]);
                 $arr['status']      = $this->verifyDate($row[5]);
                 $newArray[]         = $arr;
             }
@@ -95,53 +95,5 @@ class BoletosController extends Controller
         $newArray       = $this->higienyArray($rows, $request);
 
         return redirect('/')->with('rows',$newArray);
-    }
-
-    /**
-     * Show the form for creating the resource.
-     */
-    public function create(): never
-    {
-        abort(404);
-    }
-
-    /**
-     * Store the newly created resource in storage.
-     */
-    public function store(Request $request): never
-    {
-        abort(404);
-    }
-
-    /**
-     * Display the resource.
-     */
-    public function show()
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the resource.
-     */
-    public function edit()
-    {
-        //
-    }
-
-    /**
-     * Update the resource in storage.
-     */
-    public function update(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Remove the resource from storage.
-     */
-    public function destroy(): never
-    {
-        abort(404);
     }
 }
