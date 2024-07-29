@@ -29,6 +29,7 @@
                             <th class="text-center">Valor</th>
                             <th class="text-center">Vencimento</th>
                             <th class="text-center">Juros</th>
+                            <th class="text-center">Status</th>
                         </thead>
                         <tbody>
                             @foreach ( session('rows') as $idx=>$row )
@@ -36,10 +37,15 @@
                                     <td>{{ $row['name'] }}</td>
                                     <td>{{ $row['email'] }}</td>
                                     <td>{{ $row['cnpj'] }}</td>
-                                    <td>{{ $row['codBarras'] }}</td>
+                                    <td class="text-center">{{ $row['codBarras'] }}</td>
                                     <td>{{ $row['valor'] }}</td>
                                     <td>{{ $row['vencimento'] }}</td>
-                                    <td>{{ $row['juros'] }}</td>
+                                    <td>R${{ number_format((int) $row['juros'], 2) }}</td>
+                                    <td title="{{ $row['status'][0] }}" style="cursor: pointer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" style="color: {{ $row['status'][1] }}" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                            <circle cx="8" cy="8" r="8"/>
+                                        </svg>
+                                    </td>
                                 </tr>
                                 @endforeach
                         </tbody>
