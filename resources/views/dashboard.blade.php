@@ -47,9 +47,6 @@
                     </table>
                 </div>
             </div>
-            <div id="contianerBtnSendFile">
-                <button class="btn btn-sm">Enviar</button>
-            </div>
         @endisset
 
     </div>

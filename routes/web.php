@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BoletosController;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MeuEmail;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,7 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->group( function() {
 
     Route::post("uploadFileClients", [BoletosController::class, 'index'])->name('upload');
+    Route::get("/triggerEmail", [BoletosController::class, 'triggerEmail'])->name('triggerEmail');
 
     Route::get('/', function () {
         return view('dashboard');
@@ -31,8 +34,6 @@ Route::middleware(['auth', 'verified'])->group( function() {
     })->name('dashboard');
 
 });
-
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

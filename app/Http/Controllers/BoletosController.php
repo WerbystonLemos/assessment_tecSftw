@@ -49,9 +49,9 @@ class BoletosController extends Controller
         $rows           = $planilha->toArray();
         $newArray       = $this->higienyArray($rows, $request);
 
-        // echo '<pre>';var_dump($newArray);echo '</pre>';exit;
         return redirect('/')->with('rows',$newArray);
     }
+
     /**
      * Show the form for creating the resource.
      */
